@@ -1,0 +1,94 @@
+---
+title: Making an input component with a transitional label using React
+date: "2018-05-20"
+---
+As you may have seen with popular frameworks such as <a target="\_blank" href="https://getbootstrap.com/">Boostrap</a>, Polymer, or Angular Material,
+text fields can have a lot of configurations and states. Perhaps you'd want to validate input
+text to see if it is the appropriate data type (i.e. number of string). Maybe you are creating many text fields, some of which vary in size, but are otherwise identical. Maybe all you want to do is just add a label to your text field. There are many possible use cases and configurations for text fields, which makes it handy to encapsulate all of the possible behaviors for your text fields inside a JavaScript class. For this tutorial, we'll create a configurable input component using React .
+
+To get started, let's define the properties and interface for my React "Input" class. I want to be able to set the size, type, and label for my text field via React props.
+
+I want my text fields have a "floating label", or a label that "floats" up when the focus event for the text field is trigger, and "floats" down on the blur event (when the text field is empty). This means that my React component needs to have functions defined for the text field's `onFocus` and `onBlur` events.
+
+<textfield label="First Name" size="LARGE" type="TEXT"></textfield>
+
+```javascript
+import React from 'react';
+import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+import './Input.css';
+
+const CSS = {
+  INPUT: 'input',
+  LABEL: {
+    INACTIVE: 'label',
+    ACTIVE: 'label active'
+  },
+  CONTAINER: 'input-container'
+};
+
+const SIZE = {
+  LARGE: 'large',
+  MEDIUM: 'medium',
+  SMALL: 'small',
+  FULL: 'full'
+};
+
+const TYPE = {
+  PASSWORD: 'password',
+  TEXT: 'text'
+}
+
+class Input extends React.Component {
+  static propTypes = {
+    size: PropTypes.string.isRequired,
+    validator: PropTypes.string,
+    type: PropTypes.string
+  }
+
+  static defaultProps = {
+    type: TYPE.TEXT,
+    value: ""
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.value,
+      active: false
+    }
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value})
+  }
+
+  handleBlur() {
+    this.setState({active: false});
+  }
+
+  handleFocus() {
+    this.setState({active: true})
+  }
+
+  render() {
+    return (
+      <div className={CSS.CONTAINER}>
+        <label className={this.state.active || (this.state.value.length != 0 && this.state.value != undefined) ? CSS.LABEL.ACTIVE : CSS.LABEL.INACTIVE}>
+          {this.props.label}
+        </label>
+        <input
+          type={TYPE[this.props.type.toUpperCase()]}
+          className={SIZE[this.props.size.toUpperCase()] + ' ' + CSS.INPUT}
+          onChange={this.handleChange.bind(this)}
+          onFocus={this.handleFocus.bind(this)}
+          onBlur={this.handleBlur.bind(this)}
+          value={this.state.value}/>
+      </div>
+    );
+  }
+}
+
+export default Input;
+
+```
