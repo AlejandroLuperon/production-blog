@@ -12,7 +12,7 @@ export default ({ children, data }) => (
   <g.Div
     margin={`0 auto`}
     maxWidth={1200}
-    padding={rhythm(2)}
+    padding={rhythm(.5)}
     paddingTop={rhythm(1.5)}
   >
     <Link to={`/`}>

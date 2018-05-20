@@ -1,10 +1,14 @@
 import React from "react";
 import rehypeReact from "rehype-react"
-import TextField from "../components/textfield/TextField.js";
+import Input from "../components/input/Input.js";
+import Group from "../components/group/Group.js";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "textfield": TextField }
+  components: {
+    "textfield": Input,
+    "group": Group  
+  }
 }).Compiler
 
 export default ({ data }) => {
