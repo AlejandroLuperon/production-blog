@@ -1,0 +1,69 @@
+.label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 16px;
+  color: #104E8B;
+  position: absolute;
+  top: 10px;
+  transition-duration: .3s;
+  transition-property: transform, font-size;
+  -webkit-transition-property: transform, font-size;
+  -moz-transition-property: transform, font-size;
+  -o-transition-property: transform, font-size;
+  /*
+    This class is used on an element that is rotated.
+    Since it's absolutely positioned, we need to set
+    this style or else it would be seen.
+  */
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+}
+
+.input {
+  background-color: transparent;
+  height: 34px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px solid #E0E0E0;
+  z-index: 1; /*Weird bug with tile flipping*/
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #000000;
+  border-radius: 0px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition-property: transform;
+}
+
+.input:focus{
+  box-shadow: none !important;
+  outline: none !important;
+  border-bottom: 2px solid #104E8B;
+  box-shadow: 0 0 3px #104E8B;
+}
+
+.active {
+    transform: translateY(-23px);
+    font-size: 10px !important;
+}
+
+.small {
+  width: 135px;
+}
+
+.medium {
+  width: 250px;
+}
+
+.large {
+  width: 300px;
+}
+
+.input-container {
+  position: relative;
+  height: 38px;
+  margin-bottom: 25px;
+}

@@ -1,0 +1,3 @@
+.group > *:first-child {
+  margin-right: 30px;
+}

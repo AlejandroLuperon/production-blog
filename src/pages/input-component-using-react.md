@@ -35,6 +35,7 @@ date: "2018-05-20"
 
 The code for the form above:
 
+<a href="" target="\_blank">View tutorial code on Github</a>
 ```javascript
 <div>
   <Input label="First Name" size="LARGE" type="TEXT" />
