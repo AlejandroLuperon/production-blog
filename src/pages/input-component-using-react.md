@@ -13,13 +13,6 @@ date: "2018-05-20"
   want to be able to set the size, type, and label for my text field via React props.
 </div>
 <br/>
-<div>
-  I want my text fields have a "floating label", or a label that "floats" up when the focus event for the text field is
-  trigger, and "floats" down on the blur event (when the text field is empty). This means that my React component needs
-  have functions defined for the text field's `onFocus` and `onBlur` events.
-</div>
-
-<br/>
 <div>Here is a live demonstration below:</div>
 <br/>
 <div class="layout-row layout-align-center-center">
@@ -32,6 +25,24 @@ date: "2018-05-20"
     </group>
   </div>
 </div>
+<br/>
+<div>
+  I want my text fields have a "floating label", or a label that "floats" up when the focus event for the text field is
+  triggered, and "floats" down on the blur event when the text field is empty. This means that my React component needs
+  to have functions defined for the text field's `onFocus` and `onBlur` events.
+</div>
+
+```javascript
+handleBlur() {
+  this.setState({active: false});
+}
+
+handleFocus() {
+  this.setState({active: true})
+}
+```
+
+
 
 The code for the form above:
 
