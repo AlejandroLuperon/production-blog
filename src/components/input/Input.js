@@ -9,7 +9,9 @@ const CSS = {
     INACTIVE: 'label',
     ACTIVE: 'label active'
   },
-  CONTAINER: 'input-container'
+  CONTAINER: 'input-container',
+  HIDDEN: 'hidden',
+  ERROR: 'error'
 };
 
 const SIZE = {
@@ -24,6 +26,12 @@ const TYPE = {
   TEXT: 'text'
 }
 
+const VALIDATORS = {
+  EMPTY: (input) => {
+    return input.length > 0;
+  }
+}
+
 class Input extends React.Component {
   static propTypes = {
     size: PropTypes.string.isRequired,
@@ -33,23 +41,28 @@ class Input extends React.Component {
 
   static defaultProps = {
     type: TYPE.TEXT,
-    value: ""
+    value: "",
+    validator: ""
   }
 
   constructor(props) {
     super(props);
     this.state = {
       value: props.value,
-      active: false
+      active: false,
+      valid: true
     }
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value})
+    this.setState({value: event.target.value});
   }
 
-  handleBlur() {
-    this.setState({active: false});
+  handleBlur(event) {
+    this.setState({
+      active: false,
+      valid: (this.props.validator != "" ? VALIDATORS[this.props.validator](event.target.value) : true)
+    });
   }
 
   handleFocus() {
@@ -69,6 +82,9 @@ class Input extends React.Component {
           onFocus={this.handleFocus.bind(this)}
           onBlur={this.handleBlur.bind(this)}
           value={this.state.value}/>
+          <div className={this.state.valid ? CSS.HIDDEN : ""}>
+            <div className={CSS.ERROR}>{this.props.error}</div>
+          </div>
       </div>
     );
   }

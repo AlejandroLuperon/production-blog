@@ -17,7 +17,7 @@ date: "2018-05-20"
 <br/>
 <div class="layout-row layout-align-center-center">
   <div>
-    <textfield label="First Name" size="LARGE" type="TEXT"></textfield>
+    <textfield label="First Name" size="LARGE" type="TEXT" error="First Name cannot be empty." validator="EMPTY"></textfield>
     <textfield label="Password" size="LARGE" type="PASSWORD" value="0123456789"></textfield>
     <group>
       <textfield label="E-mail" size="SMALL" type="TEXT"></textfield>
@@ -29,7 +29,7 @@ date: "2018-05-20"
 <div>
   I want my text fields have a "floating label", or a label that "floats" up when the focus event for the text field is
   triggered, and "floats" down on the blur event when the text field is empty. This means that my React component needs
-  to have functions defined for the text field's `onFocus` and `onBlur` events.
+  to have functions defined for the text field's onFocus and onBlur events.
 </div>
 
 ```javascript
@@ -49,7 +49,7 @@ The code for the form above:
 <a href="" target="\_blank">View tutorial code on Github</a>
 ```javascript
 <div>
-  <Input label="First Name" size="LARGE" type="TEXT" />
+  <Input label="First Name" size="LARGE" type="TEXT" error="First Name cannot be empty." validator="EMPTY"/>
   <Input label="Password" size="LARGE" type="PASSWORD" value="0123456789" />
   <group>
     <Input label="E-mail" size="SMALL" type="TEXT" />
