@@ -1,0 +1,8 @@
+-web crawler for thesis
+-accordion in react
+-tabs in react
+-search engine
+-unit tests for stored procedures
+-engineering methodology
+-web crawling
+-building foreign key relations and search using elasticsearch

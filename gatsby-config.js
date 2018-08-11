@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `TBD Name`,
+    title: `Build Whatever You Want`,
   },
   plugins: [
     {

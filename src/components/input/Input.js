@@ -11,7 +11,9 @@ const CSS = {
   },
   CONTAINER: 'input-container',
   HIDDEN: 'hidden',
-  ERROR: 'error'
+  ERROR: 'error',
+  LABEL_ERROR: 'label-error',
+  BORDER_ERROR: 'border-error'
 };
 
 const SIZE = {
@@ -66,18 +68,27 @@ class Input extends React.Component {
   }
 
   handleFocus() {
-    this.setState({active: true})
+    this.setState({
+      active: true,
+      valid: true
+    })
   }
 
   render() {
     return (
       <div className={CSS.CONTAINER}>
-        <label className={this.state.active || (this.state.value.length != 0 && this.state.value != undefined) ? CSS.LABEL.ACTIVE : CSS.LABEL.INACTIVE}>
+        <label className={
+            (this.state.valid ? "" : CSS.LABEL_ERROR+ " ") +
+            (this.state.active || (this.state.value.length != 0 && this.state.value != undefined) ? CSS.LABEL.ACTIVE : CSS.LABEL.INACTIVE)
+          }>
           {this.props.label}
         </label>
         <input
           type={TYPE[this.props.type.toUpperCase()]}
-          className={SIZE[this.props.size.toUpperCase()] + ' ' + CSS.INPUT}
+          className={
+            SIZE[this.props.size.toUpperCase()] + ' ' + CSS.INPUT +
+            (this.state.valid ? "" : " " + CSS.BORDER_ERROR)
+          }
           onChange={this.handleChange.bind(this)}
           onFocus={this.handleFocus.bind(this)}
           onBlur={this.handleBlur.bind(this)}

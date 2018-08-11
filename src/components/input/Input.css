@@ -75,6 +75,14 @@
   font-size: 12px;
 }
 
+.label-error {
+  color: #d32f2f;
+}
+
+.border-error {
+  border-bottom: 2px solid #d32f2f;
+}
+
 .hidden {
   display: none;
 }

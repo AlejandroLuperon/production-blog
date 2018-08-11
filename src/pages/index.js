@@ -8,7 +8,7 @@ export default ({ data }) => {
   return (
     <div>
       <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
-        TBD
+        Build Whatever You Want
       </g.H1>
       <h4>
         {data.allMarkdownRemark.totalCount} Posts

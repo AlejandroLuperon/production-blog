@@ -4,12 +4,26 @@ date: "2018-05-20"
 ---
 <div>
   As you may have seen with popular frameworks such as <a target="\_blank" href="https://getbootstrap.com/">Boostrap</a>,
-  Polymer, or Angular Material, text fields can have a lot of configurations and states. Perhaps you'd want to validate
+  <a target="\_blank" href="https://material.angular.io/">Angular Material</a>, or <a target="\_blank" href="https://www.polymer-project.org/">Polymer</a>, text fields can have a lot of configurations and states. Perhaps you'd want to validate
   input text to see if it is the appropriate data type (i.e. number of string). Maybe you are creating many text fields,
   some of which vary in size, but are otherwise identical. Maybe all you want to do is just add a label to your text
   field. There are many possible use cases and configurations for text fields, which makes it handy to encapsulate all of
   the possible behaviors for your text fields inside a JavaScript class. For this tutorial, we'll create a configurable
-  input component using React. To get started, let's define the properties and interface for my React "Input" class. I
+  input component using React.
+</div>
+<div>
+  <br/>
+  <div>This component will be able to:</div>
+  <br/>
+  <ul>
+    <li>Validate it's content</li>
+    <li>Display error state</li>
+    <li>Have it's size be adjustable</li>
+  </ul>
+</div>
+</br>
+<div>
+  To get started, let's define the properties and interface for my React "Input" class. I
   want to be able to set the size, type, and label for my text field via React props.
 </div>
 <br/>
@@ -27,7 +41,7 @@ date: "2018-05-20"
 </div>
 <br/>
 <div>
-  I want my text fields have a "floating label", or a label that "floats" up when the focus event for the text field is
+  I want my text fields to have a "floating label", or a label that "floats" up when the focus event for the text field is
   triggered, and "floats" down on the blur event when the text field is empty. This means that my React component needs
   to have functions defined for the text field's onFocus and onBlur events.
 </div>
@@ -41,12 +55,9 @@ handleFocus() {
   this.setState({active: true})
 }
 ```
-
-
-
 The code for the form above:
 
-<a href="" target="\_blank">View tutorial code on Github</a>
+
 ```javascript
 <div>
   <Input label="First Name" size="LARGE" type="TEXT" error="First Name cannot be empty." validator="EMPTY"/>
@@ -57,7 +68,9 @@ The code for the form above:
   </group>
 </div>
 ```
-
+<div style="margin-bottom: 15px;">
+  <a href="" target="\_blank">View tutorial code on Github</a>
+</div>
 <div>Finally, we have:</div>
 
 ```javascript
