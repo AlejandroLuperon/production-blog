@@ -24,9 +24,9 @@ export default ({ data }) => {
               {node.frontmatter.title}{" "}
               <g.Span color="#BBB">— {node.frontmatter.date}</g.Span>
             </g.H3>
-            <p>
+            {/*<p>
               {node.excerpt}
-            </p>
+            </p>*/}
           </Link>
         </div>
       )}
