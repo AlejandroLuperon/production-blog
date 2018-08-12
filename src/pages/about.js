@@ -1,9 +1,10 @@
 import React from "react";
+import me from "../images/me.jpg";
 
 export default () => (
   <div>
     <h1>Build Whatever You Want</h1>
-    <img style={{maxHeight: '500px'}} src="/static/me.jpg"/>
+    <img style={{maxHeight: '500px'}} src={me}/>
     <p>
       This is a blog run by me, Alejandro Luperon. The topics in this blog will range across a variety of topics in Software Engineering,
       ranging from Front-End, to Back-End, database development, API development, machine learning, and more. I really enjoy engineering strategy, organization,
