@@ -38,7 +38,8 @@ class Input extends React.Component {
   static propTypes = {
     size: PropTypes.string.isRequired,
     validator: PropTypes.string,
-    type: PropTypes.string
+    type: PropTypes.string,
+    label: PropTypes.string
   }
 
   static defaultProps = {
@@ -86,7 +87,7 @@ class Input extends React.Component {
         <input
           type={TYPE[this.props.type.toUpperCase()]}
           className={
-            SIZE[this.props.size.toUpperCase()] + ' ' + CSS.INPUT +
+            SIZE[this.props.size.toUpperCase()] + " " + CSS.INPUT +
             (this.state.valid ? "" : " " + CSS.BORDER_ERROR)
           }
           onChange={this.handleChange.bind(this)}

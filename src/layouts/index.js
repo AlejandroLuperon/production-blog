@@ -15,6 +15,7 @@ export default ({ children, data }) => (
     padding={rhythm(.5)}
     paddingTop={rhythm(1.5)}
   >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0-rc1/angular-material.css" />
     <Link to={`/`}>
       <g.H3
         marginBottom={rhythm(2)}

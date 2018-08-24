@@ -4,12 +4,7 @@ date: "2018-05-20"
 ---
 <div>
   As you may have seen with popular frameworks such as <a target="\_blank" href="https://getbootstrap.com/">Boostrap</a>,
-  <a target="\_blank" href="https://material.angular.io/">Angular Material</a>, or <a target="\_blank" href="https://www.polymer-project.org/">Polymer</a>, text fields can have a lot of configurations and states. Perhaps you'd want to validate
-  input text to see if it is the appropriate data type (i.e. number of string). Maybe you are creating many text fields,
-  some of which vary in size, but are otherwise identical. Maybe all you want to do is just add a label to your text
-  field. There are many possible use cases and configurations for text fields, which makes it handy to encapsulate all of
-  the possible behaviors for your text fields inside a JavaScript class. For this tutorial, we'll create a configurable
-  input component using React.
+  <a target="\_blank" href="https://material.angular.io/">Angular Material</a>, or <a target="\_blank" href="https://www.polymer-project.org/">Polymer</a>, text fields can have a lot of configurations and states. Attributes such as the label, text field size, and color may vary across different places in your app. One way to manage the possible variations is to use props in React. Encapsulating all of the possible behaviors for your text fields inside a React component will provide options to configure the expected behavior of that text field in a predictable way without worrying about the implementation details of the text field itself.
 </div>
 <div>
   <br/>
@@ -23,14 +18,53 @@ date: "2018-05-20"
 </div>
 </br>
 <div>
-  To get started, let's define the properties and interface for my React "Input" class. I
-  want to be able to set the size, type, and label for my text field via React props.
+  To get started, let's define the properties and interface for the React "Input" class. We
+  want to be able to set the size, type, and label for the text field via React props.
 </div>
 <br/>
-<div>Here is a live demonstration below:</div>
+<div>
+  Since these are going to be the attributes that we can change for our React component, we'll set the default props to define it's initial state and also set the prop types to specify the data type required for each prop. Validator is also a prop type that is used to indicate what type of validation will be used for the value of the text field.
+</div>
+<br/>
+
+```javascript
+static propTypes = {
+  size: PropTypes.string.isRequired,
+  validator: PropTypes.string,
+  type: PropTypes.string,
+  label: PropTypes.string
+}
+
+static defaultProps = {
+  type: TYPE.TEXT,
+  value: "",
+  validator: ""
+}
+```
+<br/>
+<div>
+  The text field will look different depending upon the value of objects in its state.
+</div>
+
+```javascript
+constructor(props) {
+  super(props);
+  this.state = {
+    value: props.value,
+    active: false,
+    valid: true
+  }
+}
+```
+
+<div>
+  The "active" attribute is used to indicate the position of the label, which is either down when active is false, or up if active is  true. The "value" attribute is the value of the text field itself, and "valid" is a flag that indicates whether the data inside the text field is as the validator expects.
+</div>
+
+<div id="demo">Here is a live demonstration below:</div>
 <br/>
 <div class="layout-row layout-align-center-center">
-  <div>
+  <form>
     <textfield label="First Name" size="LARGE" type="TEXT" error="First Name cannot be empty." validator="EMPTY"></textfield>
     <textfield label="Password" size="LARGE" type="PASSWORD" value="0123456789"></textfield>
     <group>
@@ -41,10 +75,12 @@ date: "2018-05-20"
 </div>
 <br/>
 <div>
-  I want my text fields to have a "floating label", or a label that "floats" up when the focus event for the text field is
-  triggered, and "floats" down on the blur event when the text field is empty. This means that my React component needs
-  to have functions defined for the text field's onFocus and onBlur events.
+  The text fields will have a "floating label", or a label that "floats" up when the focus event for the text field is
+  triggered, and "floats" down on the blur event when the text field is empty. This means that the React component needs
+  to have functions defined for the text field's onFocus and onBlur events to change the state of the "active" flag.
 </div>
+
+<br/>
 
 ```javascript
 handleBlur() {
@@ -55,8 +91,24 @@ handleFocus() {
   this.setState({active: true})
 }
 ```
-The code for the form above:
+<br/>
 
+<br/>
+<div>
+  As the value in the text field will change each time the change event is called, we want to be able to handle that change. If the value is not valid,
+  the color of the label, text, and border for the text field will change to a red color and an error message will display directly below the input. Calling
+  setState after each change event will check the values validity.
+</div>
+<br/>
+
+```javascript
+handleChange(event) {
+  this.setState({value: event.target.value})
+}
+```
+<br/>
+<div>The code for the <a href='#demo'>live demonstration above</a>:</div>
+<br/>
 
 ```javascript
 <div>
@@ -68,10 +120,12 @@ The code for the form above:
   </group>
 </div>
 ```
-<div style="margin-bottom: 15px;">
+<!--<div style="margin-bottom: 15px;">
   <a href="" target="\_blank">View tutorial code on Github</a>
-</div>
-<div>Finally, we have:</div>
+</div>-->
+<br/>
+<div>Our finished product for a React component is below:</div>
+<br/>
 
 ```javascript
 import React from 'react';

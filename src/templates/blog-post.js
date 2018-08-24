@@ -2,12 +2,14 @@ import React from "react";
 import rehypeReact from "rehype-react"
 import Input from "../components/input/Input.js";
 import Group from "../components/group/Group.js";
+import Form from "../components/form/Form.js";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
     "textfield": Input,
-    "group": Group  
+    "group": Group,
+    "form": Form
   }
 }).Compiler
 
