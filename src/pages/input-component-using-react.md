@@ -4,14 +4,14 @@ date: "2018-09-03"
 tags: ["React", "JavaScript", "Text fields"]
 description: "Encapsulate all of the possible behavior of your text field in a React component."
 ---
-<div>
+<paragraph>
   As you may have seen with popular frameworks such as <a target="\_blank" href="https://getbootstrap.com/">Boostrap</a>,
   <a target="\_blank" href="https://material.angular.io/">Angular Material</a>, or <a target="\_blank" href="https://www.polymer-project.org/">Polymer</a>, input, or text fields can have a lot of configurations and states. Attributes such as the label, text field size, and color may vary across different places in your app. One way to manage the possible variations is to use <a href="https://reactjs.org/docs/components-and-props.html" target="\_blank
   ">props</a> in <a target="\_blank" href="https://reactjs.org/">React</a>. Encapsulating all of the possible behaviors for your text fields inside a React <a href="https://reactjs.org/docs/components-and-props.html" target="\_blank
   ">component</a> will provide options to configure the expected behavior of that text field in a predictable way without worrying about the implementation details of the text field itself.
-</div>
-<div>
-  <br/>
+</paragraph>
+
+<paragraph>
   <div>This component will be able to:</div>
   <br/>
   <ul>
@@ -19,16 +19,16 @@ description: "Encapsulate all of the possible behavior of your text field in a R
     <li>Display error state</li>
     <li>Have it's size be adjustable</li>
   </ul>
-</div>
-</br>
-<div>
+</paragraph>
+
+<paragraph>
   To get started, let's define the properties and interface for the React "Input" class. We
   want to be able to set the size, type, and label for the text field via React props.
-</div>
-<br/>
-<div>
+</paragraph>
+
+<paragraph>
   Since these are going to be the attributes that we can change for our React component, we'll set the default props to define it's initial state and also set the <a href="https://reactjs.org/docs/typechecking-with-proptypes.html" target="\_blank">prop types</a> to specify the data type required for each prop. "Validator" is another prop that I will add, which will be used to indicate the type of validation the value of the text field will undergo.
-</div>
+</paragraph>
 
 <snippet>
 
@@ -49,9 +49,9 @@ description: "Encapsulate all of the possible behavior of your text field in a R
 
 </snippet>
 
-<div>
+<paragraph>
   The text field will look different depending upon the value of objects in its state.
-</div>
+</paragraph>
 
 <snippet>
 
@@ -72,7 +72,7 @@ constructor(props) {
   The "active" attribute is used to indicate the position of the label, which is either down when active is false, or up if active is  true. The "value" attribute is the value of the text field itself, and "valid" is a flag that indicates whether the data inside the text field is as the validator expects.
 </paragraph>
 
-<paragraph id="demo">Here is a live demonstration below. The "First Name" field cannot be empty, so whenever the blur event is called on the input field, if there is no value, then an error message will display, and the color of the text field will turn red. This behavior was assigned by setting the "validator" prop, which as mentioned earlier sets the validation type, and "error" prop, which sets the the "error" message when validation fails. The "Password" field is an HTML input element with a type of "password". The type is being directly managed via props.:</paragraph>
+<paragraph id="demo">Check out the live demonstration below. The "First Name" field cannot be empty, so whenever the blur event is called on the input field, if there is no value, then an error message will display, and the color of the text field will turn red. This behavior was assigned by setting the "validator" prop, which as mentioned earlier sets the validation type, and "error" prop, which sets the the "error" message when validation fails. The "Password" field is an HTML input element with a type of "password". The type is being directly managed via props.</paragraph>
 
 <snippet>
 
@@ -84,9 +84,8 @@ constructor(props) {
       <textfield label="E-mail" size="SMALL" type="TEXT"></textfield>
       <textfield label="Phone" size="SMALL" type="TEXT"></textfield>
     </group>
-  </div>
-</div>
-</snippet>
+  </form>
+</paragraph>
 
 <paragraph>
   The text fields will have a "floating label", or a label that "floats" up when the focus event for the text field is
@@ -265,6 +264,14 @@ export default TextField;
 </snippet>
 
 <paragraph>
-In the code snippet above, I also store my CSS classes and other constants inside JSON objects. I find this more
-readable and reliable. Also, I only added a few props to my text field component, but you may find that you would like to manage other details the text field. For instance, you could also specify styling if your text field can have multiple styles, or a text format such as a phone number format or currency format, as well as other details that you'd might want to as props to your text field component for manageability. All of these details implementation details can be left within your text field component, and make code sharing, maintenance, and consistencey easier.
+  <div>In the code snippet above, please note the following:</div>
+  <br/>
+  <ul>
+    <li>I store my CSS classes and other constants inside JSON objects. I find this more readable and reliable.</li>
+    <li>I am using React version 15.6.2. In React 16.3, the way <a href="https://reactjs.org/docs/refs-and-the-dom.html" target="\_blank">refs are used</a> changes./li>
+  </ul>
+</paragraph>
+
+<paragraph>
+   I only added a few props to my text field component, but you may find that you would like to manage other details the text field. For instance, you could also specify styling if your text field can have multiple styles, or a text format such as a phone number format or currency format, as well as other details that you'd might want to as props to your text field component for manageability. All of these details implementation details can be left within your text field component, and make code sharing, maintenance, and consistency easier.
 </paragraph>
