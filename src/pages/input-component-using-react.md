@@ -268,7 +268,7 @@ export default TextField;
   <br/>
   <ul>
     <li>I store my CSS classes and other constants inside JSON objects. I find this more readable and reliable.</li>
-    <li>I am using React version 15.6.2. In React 16.3, the way <a href="https://reactjs.org/docs/refs-and-the-dom.html" target="\_blank">refs are used</a> changes./li>
+    <li>I am using React version 15.6.2. In React 16.3, the way <a href="https://reactjs.org/docs/refs-and-the-dom.html" target="\_blank">refs are used</a> changes.</li>
   </ul>
 </paragraph>
 
