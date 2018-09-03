@@ -8,9 +8,9 @@ import { rhythm } from "../utils/typography";
 export default ({ data }) => {
   return (
     <div>
-      <g.H1 display={"inline-block"} borderBottom={"1px solid"}>
+      <h1>
         Build Whatever You Want
-      </g.H1>
+      </h1>
       <h4>
         {data.allMarkdownRemark.totalCount} Posts
       </h4>
@@ -30,7 +30,7 @@ export default ({ data }) => {
               {node.frontmatter.title}{" "}
               <span style={{color: "#BBB"}}>— {node.frontmatter.date}</span>
             </h3>
-            <h6>{node.frontmatter.description}</h6>
+            <div style={{marginTop: '10px', fontSize: '15px'}}>{node.frontmatter.description}</div>
 
           </Link>
         </div>
@@ -48,7 +48,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             description
           }
           fields {
