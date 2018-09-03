@@ -1,0 +1,2 @@
+webpackJsonp([0xcfca5d9b3830],{398:function(e,t){e.exports={data:{markdownRemark:{htmlAst:{type:"element",tagName:"div",properties:{},children:[{type:"element",tagName:"div",properties:{},children:[{type:"text",value:"You went to Dartmouth? You must be smart!"}]},{type:"text",value:"\n"},{type:"element",tagName:"div",properties:{},children:[{type:"text",value:"You are a software engineer? You must be smart!"}]}]},frontmatter:{title:"You must be smart!"}}},pathContext:{slug:"/you-must-be-smart/"}}}});
+//# sourceMappingURL=path---you-must-be-smart-a6e14774b94d8e754483.js.map
