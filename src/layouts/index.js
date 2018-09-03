@@ -6,7 +6,7 @@ import Link from "gatsby-link";
 
 import { rhythm } from "../utils/typography";
 import './Body.css';
-const linkStyle = css({ float: `right` });
+
 
 export default ({ children, data }) => (
   <div>
@@ -20,7 +20,8 @@ export default ({ children, data }) => (
         width: '100%',
         height: '80px',
         position: 'fixed',
-        backgroundColor: 'white',
+        backgroundColor: '#2a52be',
+        color: 'white',
         fontFamily: 'Lato,Georgia,Times,serif',
         borderBottom: '1px solid gray',
         top: '0px',
@@ -28,13 +29,15 @@ export default ({ children, data }) => (
       }}>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.0-rc1/angular-material.css" />
       <a href='/' style={{textDecoration: 'none'}}>
-        <h3>
+        <h3 style={{
+          color: 'white'
+        }}>
           {data.site.siteMetadata.title}
         </h3>
       </a>
-      <Link className={linkStyle} to={`/about/`}>
+      <a style={{color: 'white'}} href='/about/'>
         About
-      </Link>
+      </a>
      </div>
      <div style={{
         marginTop: '80px',

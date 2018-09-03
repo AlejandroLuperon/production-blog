@@ -17,15 +17,10 @@ export default ({ data }) => {
       {data.allMarkdownRemark.edges.map(({ node }) =>
 
         <div key={node.id}>
-        {/*<BlogTile
-          title={node.frontmatter.title}
-          description={node.frontmatter.description}
-        />*/}
           <Link
             to={node.fields.slug}
             css={{ textDecoration: `none`, color: `inherit` }}
           >
-
             <h3>
               {node.frontmatter.title}{" "}
               <span style={{color: "#BBB"}}>— {node.frontmatter.date}</span>

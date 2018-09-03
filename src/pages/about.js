@@ -14,6 +14,6 @@ export default () => (
       I want people to feel comfortable entering and staying in the engineering world without insecurity or fear, so that way they can use their own positive traits to
       participate and grow however they see fit.
     </p>
-    <p>This blog was built using Gatsby.js and React, deployed on AWS, and is under active construction.</p>
+    <p>This blog was built using <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a> and <a href="https://reactjs.org/" target="_blank">React</a>, deployed on AWS, and is under active construction.</p>
   </div>
 );
