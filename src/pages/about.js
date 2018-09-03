@@ -6,9 +6,9 @@ export default () => (
     <h1>Build Whatever You Want</h1>
     {/*<img style={{maxHeight: '500px'}} src={me}/>*/}
     <p>
-      This is a blog run by <a href="https://www.linkedin.com/in/alejandroluperon/">me</a>, Alejandro Luperon. The topics in this blog will range across a variety of topics in Software Engineering,
+      This is a blog run by <a target='_blank' href="https://www.linkedin.com/in/alejandroluperon/">me</a>, Alejandro Luperon. The topics in this blog will range across a variety of topics in Software Engineering,
       ranging from Front-End, to Back-End, database development, API development, machine learning, and more. I really enjoy engineering strategy, organization,
-      and methodology, so there will also be articles about that.
+      and methodology, so there will also be articles about that as well.
     </p>
     <p>
       I hope to contribute to making the engineering spaces I am a part of positive and welcoming for all.
