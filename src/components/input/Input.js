@@ -54,7 +54,7 @@ class Input extends React.Component {
       value: props.value,
       active: false,
       valid: true
-    }
+    };
   }
 
   handleChange(event) {
@@ -75,16 +75,24 @@ class Input extends React.Component {
     })
   }
 
+  handleLabelClick() {
+      this.handleFocus();
+      this.refs.textField.focus();
+  }
+
   render() {
     return (
       <div className={CSS.CONTAINER}>
-        <label className={
+        <label
+          onClick={this.handleLabelClick.bind(this)}
+          className={
             (this.state.valid ? "" : CSS.LABEL_ERROR+ " ") +
             (this.state.active || (this.state.value.length != 0 && this.state.value != undefined) ? CSS.LABEL.ACTIVE : CSS.LABEL.INACTIVE)
           }>
           {this.props.label}
         </label>
         <input
+          ref="textField"
           type={TYPE[this.props.type.toUpperCase()]}
           className={
             SIZE[this.props.size.toUpperCase()] + " " + CSS.INPUT +

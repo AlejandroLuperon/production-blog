@@ -11,3 +11,7 @@ h3 {
 a {
   color: blue;
 }
+
+pre[class*="language-"] {
+  border-radius: 20px;
+}

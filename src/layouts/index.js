@@ -41,7 +41,7 @@ export default ({ children, data }) => (
         paddingTop: '35px',
         paddingLeft: '20px',
         paddingRight: '20px',
-        paddingBottom: '20px',
+        paddingBottom: '35px',
         fontFamily: 'sans-serif'
       }}>
         {children()}
