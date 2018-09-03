@@ -1,6 +1,8 @@
 ---
 title: Making an input component with a transitional label using React
 date: "2018-05-20"
+tags: ["React", "JavaScript", "Text fields"]
+description: "test"
 ---
 <div>
   As you may have seen with popular frameworks such as <a target="\_blank" href="https://getbootstrap.com/">Boostrap</a>,
@@ -23,28 +25,33 @@ date: "2018-05-20"
 </div>
 <br/>
 <div>
-  Since these are going to be the attributes that we can change for our React component, we'll set the default props to define it's initial state and also set the prop types to specify the data type required for each prop. Validator is also a prop type that is used to indicate what type of validation will be used for the value of the text field.
+  Since these are going to be the attributes that we can change for our React component, we'll set the default props to define it's initial state and also set the prop types to specify the data type required for each prop. Validator is another prop that I will add, which will be used to indicate what type of validation will the value of the text field should undergo.
 </div>
-<br/>
 
-```javascript
-static propTypes = {
-  size: PropTypes.string.isRequired,
-  validator: PropTypes.string,
-  type: PropTypes.string,
-  label: PropTypes.string
-}
+<snippet>
 
-static defaultProps = {
-  type: TYPE.TEXT,
-  value: "",
-  validator: ""
-}
-```
-<br/>
+  ```javascript
+  static propTypes = {
+    size: PropTypes.string.isRequired,
+    validator: PropTypes.string,
+    type: PropTypes.string,
+    label: PropTypes.string
+  }
+
+  static defaultProps = {
+    type: TYPE.TEXT,
+    value: "",
+    validator: ""
+  }
+  ```
+
+</snippet>
+
 <div>
   The text field will look different depending upon the value of objects in its state.
 </div>
+
+<snippet>
 
 ```javascript
 constructor(props) {
@@ -57,12 +64,14 @@ constructor(props) {
 }
 ```
 
+</snippet>
+
 <div>
   The "active" attribute is used to indicate the position of the label, which is either down when active is false, or up if active is  true. The "value" attribute is the value of the text field itself, and "valid" is a flag that indicates whether the data inside the text field is as the validator expects.
 </div>
-
-<div id="demo">Here is a live demonstration below:</div>
 <br/>
+<div id="demo">Here is a live demonstration below:</div>
+<snippet>
 <div class="layout-row layout-align-center-center">
   <form>
     <textfield label="First Name" size="LARGE" type="TEXT" error="First Name cannot be empty." validator="EMPTY"></textfield>
@@ -73,14 +82,14 @@ constructor(props) {
     </group>
   </div>
 </div>
-<br/>
+</snippet>
 <div>
   The text fields will have a "floating label", or a label that "floats" up when the focus event for the text field is
   triggered, and "floats" down on the blur event when the text field is empty. This means that the React component needs
   to have functions defined for the text field's onFocus and onBlur events to change the state of the "active" flag.
 </div>
 
-<br/>
+<snippet>
 
 ```javascript
 handleBlur() {
@@ -91,7 +100,8 @@ handleFocus() {
   this.setState({active: true})
 }
 ```
-<br/>
+
+</snippet>
 
 <br/>
 <div>
@@ -99,16 +109,19 @@ handleFocus() {
   the color of the label, text, and border for the text field will change to a red color and an error message will display directly below the input. Calling
   setState after each change event will check the values validity.
 </div>
-<br/>
+
+<snippet>
 
 ```javascript
 handleChange(event) {
   this.setState({value: event.target.value})
 }
 ```
-<br/>
+
+</snippet>
+
 <div>The code for the <a href='#demo'>live demonstration above</a>:</div>
-<br/>
+<snippet>
 
 ```javascript
 <div>
@@ -120,12 +133,12 @@ handleChange(event) {
   </group>
 </div>
 ```
-<!--<div style="margin-bottom: 15px;">
-  <a href="" target="\_blank">View tutorial code on Github</a>
-</div>-->
-<br/>
+
+</snippet>
+
 <div>Our finished product for a React component is below:</div>
-<br/>
+
+<snippet>
 
 ```javascript
 import React from 'react';
@@ -207,3 +220,5 @@ class Input extends React.Component {
 export default Input;
 
 ```
+
+</snippet>
