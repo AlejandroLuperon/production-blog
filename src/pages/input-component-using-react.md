@@ -15,19 +15,19 @@ description: "Encapsulate all of the possible behavior of your text field in a R
   <div>This component will be able to:</div>
   <br/>
   <ul>
-    <li>Validate it's content</li>
+    <li>Validate its content</li>
     <li>Display error state</li>
-    <li>Have it's size be adjustable</li>
+    <li>Have its size be adjustable</li>
   </ul>
 </paragraph>
 
 <paragraph>
-  To get started, let's define the properties and interface for the React "Input" class. We
+  To get started, let's define the properties and interface for the React "TextField" class. We
   want to be able to set the size, type, and label for the text field via React props.
 </paragraph>
 
 <paragraph>
-  Since these are going to be the attributes that we can change for our React component, we'll set the default props to define it's initial state and also set the <a href="https://reactjs.org/docs/typechecking-with-proptypes.html" target="\_blank">prop types</a> to specify the data type required for each prop. "Validator" is another prop that I will add, which will be used to indicate the type of validation the value of the text field will undergo.
+  Since these are going to be the attributes that we can change for our React component, we'll set the default props to define its initial state and also set the <a href="https://reactjs.org/docs/typechecking-with-proptypes.html" target="\_blank">prop types</a> to specify the data type required for each prop. "Validator" is another prop that I will add, which will be used to indicate the type of validation the value of the text field will undergo.
 </paragraph>
 
 <snippet>
@@ -72,7 +72,7 @@ constructor(props) {
   The "active" attribute is used to indicate the position of the label, which is either down when active is false, or up if active is  true. The "value" attribute is the value of the text field itself, and "valid" is a flag that indicates whether the data inside the text field is as the validator expects.
 </paragraph>
 
-<paragraph id="demo">Check out the live demonstration below. The "First Name" field cannot be empty, so whenever the blur event is called on the input field, if there is no value, then an error message will display, and the color of the text field will turn red. This behavior was assigned by setting the "validator" prop, which as mentioned earlier sets the validation type, and "error" prop, which sets the the "error" message when validation fails. The "Password" field is an HTML input element with a type of "password". The type is being directly managed via props.</paragraph>
+<paragraph id="demo">Check out the live demonstration below. The "First Name" field cannot be empty, so whenever the blur event is called on the input field, an error message will display if there is no value. The color of the text field will turn red as a result. This behavior was assigned by setting the "validator" prop, which as mentioned earlier sets the validation type, and "error" prop, which sets the the "error" message when validation fails. The "Password" field is an HTML input element with a type of "password". The type is being directly managed via props.</paragraph>
 
 <snippet>
 
