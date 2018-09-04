@@ -273,5 +273,5 @@ export default TextField;
 </paragraph>
 
 <paragraph>
-   I only added a few props to my text field component, but you may find that you would like to manage other details the text field. For instance, you could also specify styling if your text field can have multiple styles, or a text format such as a phone number format or currency format, as well as other details that you'd might want to as props to your text field component for manageability. All of these details implementation details can be left within your text field component, and make code sharing, maintenance, and consistency easier.
+   I only added a few props to my text field component, but you may find that you would like to manage other details the text field. For instance, you could also specify styling if your text field can have multiple styles, or a text format such as a phone number format or currency format, as well as other details that you'd might want to as props to your text field component for manageability. All of these implementation details can be left within your text field component and make code sharing, maintenance, and consistency easier.
 </paragraph>
