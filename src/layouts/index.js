@@ -35,7 +35,7 @@ export default ({ children, data }) => (
           {data.site.siteMetadata.title}
         </h3>
       </a>
-      <a style={{color: 'white'}} href='/about/'>
+      <a style={{color: 'white', fontFamily: 'sans-serif'}} href='/about/'>
         About
       </a>
      </div>

@@ -11,7 +11,7 @@ export default ({ data }) => {
       <h1>
         Build Whatever You Want
       </h1>
-      <h4>
+      <h4 style={{fontFamily: 'sans-serif'}}>
         {data.allMarkdownRemark.totalCount} Posts
       </h4>
       {data.allMarkdownRemark.edges.map(({ node }) =>
