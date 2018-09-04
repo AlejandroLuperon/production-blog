@@ -6,7 +6,7 @@ description: "Encapsulate all of the possible behavior of your text field in a R
 ---
 <paragraph>
   As you may have seen with popular frameworks such as <a target="\_blank" href="https://getbootstrap.com/">Boostrap</a>,
-  <a target="\_blank" href="https://material.angular.io/">Angular Material</a>, or <a target="\_blank" href="https://www.polymer-project.org/">Polymer</a>, input, or text fields can have a lot of configurations and states. Attributes such as the label, text field size, and color may vary across different places in your app. One way to manage the possible variations is to use <a href="https://reactjs.org/docs/components-and-props.html" target="\_blank
+  <a target="\_blank" href="https://material.angular.io/">Angular Material</a>, or <a target="\_blank" href="https://www.polymer-project.org/">Polymer</a>, input or text fields can have a lot of configurations and states. Attributes such as the label, text field size, and color may vary across different places in your app. One way to manage the possible variations is to use <a href="https://reactjs.org/docs/components-and-props.html" target="\_blank
   ">props</a> in <a target="\_blank" href="https://reactjs.org/">React</a>. Encapsulating all of the possible behaviors for your text fields inside a React <a href="https://reactjs.org/docs/components-and-props.html" target="\_blank
   ">component</a> will provide options to configure the expected behavior of that text field in a predictable way without worrying about the implementation details of the text field itself.
 </paragraph>
