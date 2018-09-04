@@ -72,7 +72,7 @@ constructor(props) {
   The "active" attribute is used to indicate the position of the label, which is either down when active is false, or up if active is  true. The "value" attribute is the value of the text field itself, and "valid" is a flag that indicates whether the data inside the text field is as the validator expects.
 </paragraph>
 
-<paragraph id="demo">Check out the live demonstration below. The "First Name" field cannot be empty, so whenever the blur event is called on the input field, an error message will display if there is no value. The color of the text field will turn red as a result. This behavior was assigned by setting the "validator" prop, which as mentioned earlier sets the validation type, and "error" prop, which sets the the "error" message when validation fails. The "Password" field is an HTML input element with a type of "password". The type is being directly managed via props.</paragraph>
+<paragraph id="demo">In the live demonstration below, the "First Name" field cannot be empty. So whenever the blur event is called on the input field, an error message will display if there is no value. The color of the text field will turn red as a result. This behavior was assigned by setting the "validator" prop, which as mentioned earlier sets the validation type, and "error" prop, which sets the the "error" message when validation fails. The "Password" field is an HTML input element with a type of "password". The type is being directly managed via props.</paragraph>
 
 <snippet>
 
