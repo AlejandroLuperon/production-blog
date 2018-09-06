@@ -7,7 +7,10 @@ import { rhythm } from "../utils/typography";
 
 export default ({ data }) => {
   return (
-    <div>
+   <div className={'layout-column layout-align-center-center'}>
+          <div style={{
+            width: '1200px'
+          }}>
       <h1>
         Build Whatever You Want
       </h1>
@@ -30,6 +33,7 @@ export default ({ data }) => {
           </Link>
         </div>
       )}
+     </div>
     </div>
   )
 }

@@ -20,11 +20,15 @@ const renderAst = new rehypeReact({
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div>
-      <h1 style={{marginBottom: '65px'}}>
-        {post.frontmatter.title}
-      </h1>
-      <div>{renderAst(post.htmlAst)}</div>
+    <div className={'layout-column layout-align-center-center'}>
+      <div style={{
+        width: '1200px'
+      }}>
+        <h1 style={{marginBottom: '65px'}}>
+          {post.frontmatter.title}
+        </h1>
+        <div>{renderAst(post.htmlAst)}</div>
+      </div>
     </div>
   );
 };
