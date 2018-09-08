@@ -2,7 +2,10 @@ import React from "react";
 import me from "../images/me.jpg";
 
 export default () => (
-  <div>
+  <div className={'layout-column layout-align-center-center'}>
+         <div style={{
+           width: '1200px'
+         }}>
     <h1>Build Whatever You Want</h1>
     <p>
       This is a blog run by <a target='_blank' href="https://www.linkedin.com/in/alejandroluperon/">me</a>, Alejandro Luperon. The topics in this blog will range across a variety of topics in Software Engineering
@@ -15,5 +18,6 @@ export default () => (
       participate and grow however they see fit.
     </p>
     <p>This blog was built using <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby.js</a> and <a href="https://reactjs.org/" target="_blank">React</a>, deployed on AWS, and is under active construction.</p>
+  </div>
   </div>
 );
