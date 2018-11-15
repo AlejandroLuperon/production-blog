@@ -2,7 +2,7 @@ import React from "react";
 import g from "glamorous";
 import Link from "gatsby-link";
 import BlogTile from '../common/blogtile/blogtile.js';
-
+import './index.css';
 import { rhythm } from "../utils/typography";
 
 export default ({ data }) => {
@@ -17,22 +17,24 @@ export default ({ data }) => {
       <h4 style={{fontFamily: 'sans-serif'}}>
         {data.allMarkdownRemark.totalCount} Posts
       </h4>
-      {data.allMarkdownRemark.edges.map(({ node }) =>
+      <div className={'articles'}>
+        {data.allMarkdownRemark.edges.map(({ node }) =>
 
-        <div key={node.id}>
-          <Link
-            to={node.fields.slug}
-            css={{ textDecoration: `none`, color: `inherit` }}
-          >
-            <h3>
-              {node.frontmatter.title}{" "}
-              <span style={{color: "#BBB"}}>— {node.frontmatter.date}</span>
-            </h3>
-            <div style={{marginTop: '10px', fontSize: '15px'}}>{node.frontmatter.description}</div>
+          <div key={node.id}>
+            <Link
+              to={node.fields.slug}
+              css={{ textDecoration: `none`, color: `inherit` }}
+            >
+              <h3>
+                {node.frontmatter.title}{" "}
+                <span style={{color: "#BBB"}}>— {node.frontmatter.date}</span>
+              </h3>
+              <div style={{marginTop: '10px', fontSize: '15px'}}>{node.frontmatter.description}</div>
 
-          </Link>
-        </div>
-      )}
+            </Link>
+          </div>
+        )}
+      </div>
      </div>
     </div>
   )

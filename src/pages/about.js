@@ -1,6 +1,8 @@
 import React from "react";
 import me from "../images/me.jpg";
 
+import callback_1 from "../images/dealing-with-callback-hell-using-graphs-asset-1.png";
+
 export default () => (
   <div className={'layout-column layout-align-center-center'}>
          <div style={{

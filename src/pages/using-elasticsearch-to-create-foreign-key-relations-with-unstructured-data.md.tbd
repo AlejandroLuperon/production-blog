@@ -1,0 +1,46 @@
+Disclaimer: The web scraper and mapping code was built by me after PeerLogix had went under this past Monday and built on my own time.
+
+1. What’s an example of something challenging you worked on at Peerlogix, how you approached the problem, and what you learned from it?
+
+<paragraph>
+  In the torrent community, there are many ways that media across television, movies, and music are labeled. For instance
+
+</paragraph>
+Something that was challenging, but fun, was figuring out how to create relationships (basically just foreign keys) for 3rd party data sets, such as IMDb or Musicbrainz, to reference PeerLogix’s proprietary data.
+
+Titles for torrents are created by contributors to the file-sharing community. Although there are informal standards for naming torrents in the torrent community, the titles have ‘noise’, or data that is not relevant for mapping. Titles take forms like ‘Work- Rihanna -(Explicit) ft. Drake [Full SOng 2016] HD 1080p_S@nDy’, which maps to the single ‘Work’ from the ‘Anti’ album by Rihanna, or ‘Game of Thrones S05E08 HDTV x264-KILLERS[ettv]’ which maps to the ‘Game of Thrones’ TV series, episode 8 of season 5. Strings such as ‘HD 1080’ and ‘HDTV’ and other data, while not critical for this stage, we’d have possibly been interested in at some point as it is still information.
+
+There exists millions of torrents that are regularly downloaded worldwide. After calculating estimates as to how long it would take to manually create a “mapping” between our data set and the relevant 3rd party data sets, we understood that an automated mapping system was necessary without investing many thousands of hours to link a torrent to something in a 3rd party data set manually.
+
+The need for mapping had been known, because not only can 3rd party data sets can enhance the possible aggregations, but also many torrents can map to one piece of content. The movie ‘Deadpool’ can be downloaded across many different torrents.
+
+My boss was hesitant to let my try to solve the problem, given the poor results produced from an attempt that my boss guided Xin through through, our long time contractor, back in 2014. However, he let me use business hours to try to solve this in the Fall of 2015.
+
+For this problem, I looked at the data first. The title for each piece of content can be described differently by category (a category being TV, Music, Movie, Book, etc).  So I determined that having different scripts processing torrent titles from different categories would be important since each category is described differently. In the torrent ecosystem, music is often provided by song or album. The torrent community will classify them by name and artist name. For television shows, they are most often provided by episode. An episode would be classified by series name, episode number, and season number.
+
+Using these features (Artist name, season number, movie name etc), it occurred to me that I could use the Elasticsearch multi-match query to ‘link’ a torrent to related content in the 3rd party data sets by using the described features above.
+
+While not every single torrent passed our mapping system, and was thus ‘not mapped’, the torrents that did had more coherent/less ambiguous titles, and the coherent are what were more frequently downloaded by the torrent community (i.e. people are less likely to download ‘Beyoncé’s Best Songs Ever OMG’ vs. ‘Beyoncé - 7-11 [320kbps] True320’ since they aren’t certain that ambiguous titles necessarily contain what they are looking for without further investigation). Out of samples from the TV, Music, and Movie systems, we had between 98% and 99.5% attempts correctly mapped out of samples of 10,000 attempts for each category (human validated results).
+
+I did build an interface (web app) to pull unmapped data (failures) and present to a user for manual classification as well.
+Technically speaking, I learned a ton about Elasticsearch, such as the Elasticsearch DSL. I had plans to integrate other tools Elasticsearch had that I had learned about such as the levenshtein distance query, which I was previously unfamiliar with until after I read the documentation.
+
+2. 3. Do you have code example of something you're proud of building?
+
+This relates to question one. The mapping code is something I am proud of because of the process I went through to even figure what I needed to write. I had to study the problem, and with that, I identified that the problem wasn’t consistent across all of the items in our torrent library. I then wrote custom solutions for TV, Music, and Movie torrents. The e-mail that this doc was sent with also has the code.
+
+Kattvscraper.py - Scrapes data from kat.cr that I need to use for the mapping script and loads it into a MySQL table.
+
+Load_tv_data.py - Loads data from a local deploy of IMDb to a local elasticsearch server.
+
+Tv_mapings.py - Associates scraped data with IMDb data.
+
+3. How did you collaborate on the code level (Git, branching strategy, CI tools, etc.) with the contract developer? What tools or processes did you find most valuable to coordinate?
+
+Xin was in China for the first year, so we were 12 hours apart. Communication was mainly through skype.  Collaboration on the code level was almost non-existent because we basically separately managed our respective applications. The torrent monitoring systems/scrapers/geolocation systems and the data cleansing and mapping systems/business logic/web application were decoupled. After location was appended, data was replicated by Xin, and I’d read from that database and do my work for the web application architecture.
+
+He didn’t avidly use Git, but all I needed to do was to ask him to push code up (and I did when I was tasked to document the code for a potential CTO candidate and advisor to the CEO to evaluate). He later moved to New Zealand, where he had done his Masters in CS and graduated in 07’, and that improved communication because he’d start working around 3 PM EST. Collaboration was at the strategy level, as we were both autonomous in terms of the applications we managed. I occasionally made suggestions as to things I thought he’d might want to look into, and I’d pick his brain via Skype or e-mail if I was in need of his expertise.
+
+
+
+I wrote some code that, using Elasticsearch's cross-fields queries and some regular expressions, took data scraped from torrent websites and mapped it to data existing in IMDb and Musicbrainz databases. At PeerLogix, we scraped many thousands of titles of torrents from online for the purposes of identifying what torrents our torrent monitoring system (which collected data from peer-to-peer networks) observed. While I was there, we observed close to 1 billion downloads, which mapped to hundreds of thousands of titles in our catalog. The problem was that since many different torrents can map to one piece of media, our catalog had many redundant items that represented one piece of media. Without defining some sort of foreign key that these redundant items could map to, most of our aggregations would not accurately reflect what our database observed. Due to limited time and resources, we had our sole QA resource review several samples generated from this system. Out of samples from the TV, Music, and Movie categories, we had between 98% and 99.5% attempts correctly mapped out of samples of 10,000 attempts for each category. This made our aggregations more accurately reflect what our torrent monitoring system was capturing.

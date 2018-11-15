@@ -1,0 +1,119 @@
+---
+title: Getting started with Volley
+date: "2018-05-21"
+---
+<paragraph>
+  Volley is an HTTP library with an API that provides methods for making HTTP calls.
+</paragraph>
+
+
+```java
+
+public void loadProperties() {
+
+    RecyclerView rv= (RecyclerView) findViewById(R.id.myPropertyRecycler);
+
+    //SET ITS PROPETRIES
+    rv.setLayoutManager(new LinearLayoutManager(this));
+    rv.setItemAnimator(new DefaultItemAnimator());
+
+    itsSearch.search(this, (result)->{
+        System.out.println(result);
+
+        try {
+            ArrayList<Property> itsProperties = itsObjectMapper.readValue(result, new TypeReference<List<Property>>() {});
+            final MyPropertyAdapter theAdapter=new MyPropertyAdapter(this, itsProperties);
+            rv.setAdapter(theAdapter);
+
+            sv= (SearchView) findViewById(R.id.mSearch);
+            //SEARCH
+            sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String query) {
+                    //FILTER AS YOU TYPE
+                    theAdapter.getFilter().filter(query);
+                    return false;
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    });
+}
+
+
+```
+
+
+```java
+
+package com.tutorials.hp.customrecyclerfiltering.search;
+
+import android.content.Context;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.function.Consumer;
+
+public class Search {
+    public void search(Context inConext, final Consumer<String> inConsumerString) {
+        RequestQueue queue = Volley.newRequestQueue(inConext);
+        String theUrl = "http://10.0.2.2:8080/rest/search/properties";
+
+        final String theJsonString = "{\"addressGoogle\":{\"name\":null, \"subPremise\":null, \"formattedAddress\":null, \"city\":null, \"sublocalityLevel1\":null, \"regionName\":null, \"postalCode\":null, \"regionCode\":null, \"countyName\":null, \"countryName\":null, \"countryCode\":null, \"type\":null, \"latitude\":null, \"longitude\":null, \"neighborhood\":null, \"placeId\":null}, \"bedroom\":null, \"bathroom\":null, \"leaseTermType\":null, \"minPrice\":null, \"maxPrice\":null, \"minFeet\":null, \"maxFeet\":null, \"isDogAllowed\":null, \"isCatAllowed\":null, \"isLaundry\":null, \"isSortPriceLow\":null, \"excludedLeaseType\":null}";
+
+        StringRequest theStringRequest = new StringRequest
+                (Request.Method.POST, theUrl, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        inConsumerString.accept(response);
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }) {
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                JSONObject theJSONObject = null;
+
+                try {
+                    theJSONObject = new JSONObject(theJsonString);
+                    return theJSONObject.toString().getBytes("utf-8");
+                } catch (UnsupportedEncodingException uee) {
+                    VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", theJSONObject.toString(), "utf-8");
+                    return null;
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+        };
+
+        queue.add(theStringRequest);
+    }
+}
+
+
+```
