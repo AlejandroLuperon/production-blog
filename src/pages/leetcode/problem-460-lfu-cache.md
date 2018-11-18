@@ -192,7 +192,7 @@ public int get(int key) {
   </ul>
   <br/>
   <br/>
-  While this implementation keeps track of population in a separate property, we don't need to have a separate property for the population of the cache, as we could also just check the size of the nodeMap.
+  While this implementation keeps track of population in a separate property, we don't need to have a separate property for the population of the cache, as could instead check the size of the nodeMap.
 </paragraph>
 
 ```java
