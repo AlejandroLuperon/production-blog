@@ -5,6 +5,7 @@ import Group from "../components/group/Group.js";
 import Form from "../components/form/Form.js";
 import Snippet from "../common/snippet/snippet.js";
 import Paragraph from "../common/paragraph/paragraph.js";
+import Caption from "../common/caption/caption.js";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -13,7 +14,8 @@ const renderAst = new rehypeReact({
     "group": Group,
     "form": Form,
     "snippet": Snippet,
-    "paragraph": Paragraph
+    "paragraph": Paragraph,
+    "caption": Caption
   }
 }).Compiler
 
