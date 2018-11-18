@@ -1,6 +1,6 @@
 ---
 title: LeetCode Problem 460 - LFU Cache, Part 1
-date: "2018-05-21"
+date: "2018-11-18"
 description: LeetCode question to implement an LFU Cache.
 ---
 <paragraph>
@@ -101,27 +101,9 @@ class LFUCache {
 <br/>
 <br/>
 
-
-```java
-class Node {
-    public int key;
-    public int val;
-    public int retrievals = 0;
-
-    public Node(int inKey,  int inVal) {
-        key = inKey;
-        val = inVal;
-    }
-}
-
-
-```
-<br/>
-<br/>
-
 <paragraph>
-  With my implementation of the LFUCache, I want to store the key and value properties in an object, so I will create a class that will store these properties I also want to keep track of the number of times a
-  specific key is retrieved, so when a new key is added to the cache, a new Node object will be instantiated. Thus, this node class will have the following properties:
+  A Node class is also used above. With my implementation of the LFUCache, I want to store the key and value properties in an object, so I will create a class that will store these properties. I also want to keep track of the number of times a
+  specific key is retrieved, so when a new key is added to the cache, a new Node object will be instantiated. Thus, this Node class will have the following properties:
   <br/>
   <br/>
   <ul>
@@ -130,7 +112,7 @@ class Node {
     <li>retrievals</li>
   </ul>
   <br/>
-  The implementation of the Node class is below.
+
 </paragraph>
 
 ```java
@@ -194,10 +176,6 @@ public int get(int key) {
   The get method will first check the nodeMap to see if the key already exists in the cache. If the key exists in the cache,
   then the use of the key will have increased by 1, and thus we will have to increase the retrievals property of the Node associated with the key
   by 1. It's location in the retrievalMap will change as well, since the LinkedList that the Node should exist in will be in a different key. Finally, since the key exists, we should return the value stored at that key.
-</paragraph>
-
-<paragraph>
-
 </paragraph>
 
 <paragraph>
