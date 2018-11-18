@@ -4,7 +4,7 @@ date: "2018-11-18"
 description: LeetCode question to implement an LFU Cache.
 ---
 <paragraph>
-  <a target="\_blank" href="https://leetcode.com/problems/lfu-cache/">Problem 460 on LeetCode</a> requires the creation of an Least Frequently Used (LFU) cache. An LFU cache is an algorithm that, when it's capacity is reached, removes
+  <a target="\_blank" href="https://leetcode.com/problems/lfu-cache/">Problem 460 on LeetCode</a> requires the creation of a Least Frequently Used (LFU) cache. An LFU cache is an algorithm that, when it's capacity is reached, removes
   the least frequently used object from memory.
 </paragraph>
 
