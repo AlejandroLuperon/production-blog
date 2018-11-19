@@ -282,7 +282,7 @@ if (population == capacity && !itsNodeMap.containsKey(key)) {
 </paragraph>
 
 <paragraph>
-  Whether or not capacity has been reached, we will need a procedure to manage the addition of a key to the cache. If, for a given, key, there is an object in memory, then we will need to increment the number of times it has been retrieved and rewrite the value of the Node. The node will then need to be moved to the next appropriate key in the retrievalMap.
+  Whether or not capacity has been reached, we will need a procedure to manage the addition of a key to the cache. If, for a given key, there is an object in memory, then we will need to increment the number of times it has been retrieved and rewrite the value of the Node. The node will then need to be moved to the next appropriate key in the retrievalMap.
 </paragraph>
 
 ```java
