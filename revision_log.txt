@@ -1,0 +1,4 @@
+http://alejandroluperon.com/leetcode/problem-460-lfu-cache/
+
+- In the put method, we don't need a separate if statement to check if the capacity is 0. Just don't evaluate the code below.
+- We could keep track of a "root node", or the lease frequently used node with a pointer to it.
