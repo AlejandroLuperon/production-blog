@@ -6,3 +6,6 @@ blog section format - look at bitsofco.de
 look to apply to carbon ads
 add disqus to website
 format about section
+
+
+implement tags for articles
