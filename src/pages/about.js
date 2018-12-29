@@ -10,7 +10,7 @@ export default () => (
      }}>
         <h1>Build Whatever You Want</h1>
         <div className={'layout-row layout-xs-column layout-sm-column'}>
-          <div style={{maxHeight: "600px", display: "none"}}>
+          <div style={{maxHeight: "600px"}}>
             <img src={me} />
           </div>
           <div>
