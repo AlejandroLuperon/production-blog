@@ -3,6 +3,7 @@ title: Making an input component with a transitional label using React
 date: "2018-09-03"
 tags: ["React", "JavaScript", "Text fields"]
 description: "Encapsulate all of the possible behavior of your text field in a React component."
+src: input-component-using-react.jpg
 ---
 <paragraph>
   As you may have seen with popular frameworks such as <a target="\_blank" href="https://getbootstrap.com/">Boostrap</a>,

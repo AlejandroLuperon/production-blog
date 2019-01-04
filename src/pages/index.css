@@ -1,3 +1,30 @@
-.articles > *:not(:last-child) {
-  margin-bottom: 20px;
+.articles > * {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 100px;
+  cursor: pointer;
+}
+
+.articles {
+  margin-left: -30px;
+  margin-right: -30px;
+  margin-bottom: -100px;
+}
+
+@media(min-width: 768px) {
+  .articles > * {
+    width: calc(33.3% - 60px);
+  }
+}
+
+@media(max-width: 960px) and (min-width: 600px){
+  .articles > * {
+    width: calc(50% - 60px);
+  }
+}
+
+@media(max-width: 599px) {
+  .articles > * {
+    width: 100%;
+  }
 }

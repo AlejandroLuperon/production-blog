@@ -17,22 +17,9 @@ export default ({ data }) => {
       <h4 style={{fontFamily: 'sans-serif'}}>
         {data.allMarkdownRemark.totalCount} Posts
       </h4>
-      <div className={'articles'}>
+      <div className={'articles' + ' ' + 'layout-row' + ' ' + 'layout-wrap'}>
         {data.allMarkdownRemark.edges.map(({ node }) =>
-
-          <div key={node.id}>
-            <Link
-              to={node.fields.slug}
-              css={{ textDecoration: `none`, color: `inherit` }}
-            >
-              <h3>
-                {node.frontmatter.title}{" "}
-                <span style={{color: "#BBB"}}>— {node.frontmatter.date}</span>
-              </h3>
-              <div style={{marginTop: '10px', fontSize: '15px'}}>{node.frontmatter.description}</div>
-
-            </Link>
-          </div>
+          <BlogTile key={node.id} src={'/static/thumbnails/' + node.frontmatter.src} title={node.frontmatter.title} date={node.frontmatter.date} description={node.frontmatter.description}></BlogTile>
         )}
       </div>
      </div>
@@ -51,6 +38,7 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             description
+            src
           }
           fields {
             slug

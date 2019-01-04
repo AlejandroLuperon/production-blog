@@ -1,4 +1,5 @@
 import React from 'react';
+import './blogtile.css'
 
 class BlogTile extends React.Component {
   constructor(props) {
@@ -6,14 +7,17 @@ class BlogTile extends React.Component {
   }
   render() {
     return (
-      <div style={{
+      <div
+        style={{
         height: '400px',
-        width: '100%',
-        backgroundColor: 'white',
-        border: '1px solid black'
+        backgroundColor: 'white'
       }}>
-        <div>{this.props.title}</div>
-        <div>{this.props.description}</div>
+        <img src={this.props.src} />
+        <div>
+          <div>{this.props.title}</div>
+          <div>{this.props.date}</div>
+          <div>{this.props.description}</div>
+        </div>
       </div>
     );
   }
