@@ -1,11 +1,8 @@
 require("prismjs/themes/prism-tomorrow.css");
-
 import React from "react";
 import g from "glamorous";
 import { css } from "glamor";
 import Link from "gatsby-link";
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 import { rhythm } from "../utils/typography";
 import './Body.css';
@@ -30,7 +27,8 @@ export default ({ children, data }) => (
         top: '0px',
         zIndex: '1'
       }}>
-
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" />
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
       <a href='/' className={'col'} style={{textDecoration: 'none', textAlign: 'center'}}>
         <h3 style={{
           color: 'white'
