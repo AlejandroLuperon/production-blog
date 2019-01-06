@@ -25,8 +25,8 @@ export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <div className={'d-flex flex-column justify-content-center'}>
-      <div style={{
-        width: '1200px'
+      <div class='col-12' style={{
+        maxWidth: '1200px'
       }}>
         <h1 style={{marginBottom: '65px'}}>
           {post.frontmatter.title}

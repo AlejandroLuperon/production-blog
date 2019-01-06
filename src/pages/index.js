@@ -10,7 +10,7 @@ export default ({ data }) => {
   return (
     <div className='d-flex flex-column align-items-center'>
       <div className={'d-flex flex-md-row flex-column-reverse col-12'}
-        style={{width: '1200px'}}>
+        style={{maxWidth: '1200px'}}>
           <div className={'col-md-8 col-12'}>
             <h4 style={{fontFamily: 'sans-serif'}}>
               {data.allMarkdownRemark.totalCount} Posts
