@@ -6,6 +6,7 @@ import Form from "../components/form/Form.js";
 import Snippet from "../common/snippet/snippet.js";
 import Paragraph from "../common/paragraph/paragraph.js";
 import Caption from "../common/caption/caption.js";
+import Banner from "../common/banner/banner.js";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -15,14 +16,15 @@ const renderAst = new rehypeReact({
     "form": Form,
     "snippet": Snippet,
     "paragraph": Paragraph,
-    "caption": Caption
+    "caption": Caption,
+    "banner": Banner
   }
 }).Compiler
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div className={'layout-column layout-align-center-center'}>
+    <div className={'d-flex flex-column justify-content-center'}>
       <div style={{
         width: '1200px'
       }}>

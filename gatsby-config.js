@@ -3,7 +3,6 @@ module.exports = {
     title: `Build Whatever You Want`,
   },
   plugins: [
-    `angular-material`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

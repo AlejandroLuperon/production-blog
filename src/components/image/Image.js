@@ -9,7 +9,7 @@ class Image extends React.Component {
 
   render() {
     return (
-      <div className={CSS.GROUP + " layout-row layout-wrap"}>
+      <div className={CSS.GROUP + " d-flex flex-row  flex-wrap"}>
           {this.props.children}
       </div>
     );

@@ -1,2 +1,0 @@
-webpackJsonp([0xccc56b0efcaf],{385:function(t,a){t.exports={data:{markdownRemark:{htmlAst:{type:"root",children:[],data:{quirksMode:!1}},frontmatter:{title:""}}},pathContext:{slug:"/api-design-using-rails/"}}}});
-//# sourceMappingURL=path---api-design-using-rails-f337514d4929afeb8f2f.js.map

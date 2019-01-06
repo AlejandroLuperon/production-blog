@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "gatsby-link";
 import './blogtile.css'
 
 class BlogTile extends React.Component {
@@ -7,18 +8,17 @@ class BlogTile extends React.Component {
   }
   render() {
     return (
-      <div
-        style={{
-        height: '400px',
-        backgroundColor: 'white'
-      }}>
+      <Link
+       to={this.props.slug}
+       css={{ textDecoration: `none`, color: `inherit` }}
+       >
         <img src={this.props.src} />
-        <div>
-          <div>{this.props.title}</div>
-          <div>{this.props.date}</div>
-          <div>{this.props.description}</div>
+        <div className={'d-flex flex-column ' + ' ' + 'justify-content-center'}>
+          <div style={{fontWeight: 'bold', textAlign: 'center'}}>{this.props.title}</div>
+          <div style={{marginTop: '5px', marginBottom: '5px', fontStyle: 'italic', textAlign: 'center'}}>{this.props.date}</div>
+          <div style={{textAlign: 'center'}}>{this.props.description}</div>
         </div>
-      </div>
+      </Link>
     );
   }
 }

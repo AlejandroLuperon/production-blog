@@ -77,7 +77,7 @@ constructor(props) {
 
 <snippet>
 
-<paragraph className="layout-row layout-align-center-center">
+<paragraph className="d-flex flex-row justify-content-center">
   <form>
     <textfield label="First Name" size="LARGE" type="TEXT" error="First Name cannot be empty." validator="EMPTY"></textfield>
     <textfield label="Password" size="LARGE" type="PASSWORD" value="0123456789"></textfield>

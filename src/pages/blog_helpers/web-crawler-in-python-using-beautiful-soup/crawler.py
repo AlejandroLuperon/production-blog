@@ -11,8 +11,8 @@ url_checked = []
 http = httplib2.Http()
 
 local_host = 'localhost';
-local_username = 'alejandro'
-local_password = '9016403'
+local_username = os.environ['MYSQL_USERNAME']
+local_password = os.environ['MYSQL_PASSWORD']
 local_database = 'scraper'
 local_port = '3306'
 
