@@ -1,5 +1,5 @@
 h1 {
-  font-family: sans-serif;
+  font-family: sans-serif !important;
 
 }
 
@@ -14,4 +14,8 @@ a {
 
 pre[class*="language-"] {
   border-radius: 20px;
+}
+
+* {
+    font-family: sans-serif !important
 }
