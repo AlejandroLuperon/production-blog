@@ -3,6 +3,18 @@
   margin-right: 30px;
   margin-bottom: 100px;
   cursor: pointer;
+  -webkit-transition-property: box-shadow;
+  -moz-transition-property: box-shadow;
+  -o-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.articles > *:hover {
+  box-shadow: 0 6px 21px 1px rgba(0, 0, 0, 0.28);
 }
 
 .articles {
