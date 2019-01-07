@@ -13,7 +13,7 @@ class BlogTile extends React.Component {
        css={{ textDecoration: `none`, color: `inherit` }}
        >
         <img src={this.props.src} />
-        <div className={'d-flex flex-column ' + ' ' + 'justify-content-center'}>
+        <div style={{paddingBottom: '10px'}} className={'d-flex flex-column ' + ' ' + 'justify-content-center'}>
           <div style={{fontWeight: 'bold', textAlign: 'center'}}>{this.props.title}</div>
           <div style={{marginTop: '5px', marginBottom: '5px', fontStyle: 'italic', textAlign: 'center'}}>{this.props.date}</div>
           <div style={{textAlign: 'center'}}>{this.props.description}</div>
