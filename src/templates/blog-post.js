@@ -24,16 +24,18 @@ const renderAst = new rehypeReact({
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div className={'d-flex flex-column justify-content-center'}>
-      <div class='col-12' style={{
-        maxWidth: '1200px'
-      }}>
-        <h1 style={{marginBottom: '65px'}}>
-          {post.frontmatter.title}
-        </h1>
-        <div>{renderAst(post.htmlAst)}</div>
+
+      <div className={'d-flex flex-column align-items-center'}>
+        <div class='col-12' style={{
+          maxWidth: '1200px'
+        }}>
+          <h1 style={{marginBottom: '65px'}}>
+            {post.frontmatter.title}
+          </h1>
+          <div>{renderAst(post.htmlAst)}</div>
+        </div>
       </div>
-    </div>
+    
   );
 };
 

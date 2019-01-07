@@ -16,7 +16,7 @@ pre[class*="language-"] {
   border-radius: 20px;
 }
 
-* {
+*:not(pre[class*="language-"]) {
     font-family: sans-serif !important
 }
 
