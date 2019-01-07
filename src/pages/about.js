@@ -6,8 +6,8 @@ import callback_1 from "../images/dealing-with-callback-hell-using-graphs-asset-
 export default () => (
 
      <div className='col-12' style={{
-       width: '1200px'}}>
-        <h1>Build Whatever You Want</h1>
+       maxWidth: '1200px'}}>
+        <div className={'logo'}>Build Whatever You Want</div>
         <div className={'d-flex flex-lg-row flex-column '}>
           <div className='col-md-4 col-12'>
             <img style={{maxHeight: "600px"}} src={me} />
