@@ -14,7 +14,7 @@
 }
 
 .articles > *:hover {
-  box-shadow: 0 6px 21px 1px rgba(0, 0, 0, 0.28);
+  /*box-shadow: 0 6px 21px 1px rgba(0, 0, 0, 0.28);*/
 }
 
 .articles {
