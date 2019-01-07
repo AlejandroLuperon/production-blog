@@ -12,7 +12,7 @@ export default ({ data }) => {
       <div className={'d-flex flex-md-row flex-column-reverse col-12'}
         style={{maxWidth: '1200px'}}>
           <div className={'col-md-8 col-12'}>
-            <h4 style={{fontFamily: 'sans-serif'}}>
+            <h4 style={{fontFamily: 'sans-serif', marginBottom: '15px'}}>
               {data.allMarkdownRemark.totalCount} Posts
             </h4>
             <div className={'articles' + ' ' + 'd-flex flex-row ' + ' ' + 'flex-wrap'}>
