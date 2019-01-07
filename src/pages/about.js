@@ -7,7 +7,7 @@ export default () => (
 
      <div className='col-12' style={{
        maxWidth: '1200px'}}>
-        <div className={'logo'}>Build Whatever You Want</div>
+        <h1>Build Whatever You Want</h1>
         <div className={'d-flex flex-lg-row flex-column '}>
           <div className='col-md-4 col-12'>
             <img style={{maxHeight: "600px"}} src={me} />

@@ -30,11 +30,11 @@ export default ({ children, data }) => (
       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" />
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
       <a href='/' className={'col'} style={{textDecoration: 'none', textAlign: 'center'}}>
-        <h3 style={{
+        <div className={'logo'} style={{
           color: 'white'
         }}>
           {data.site.siteMetadata.title}
-        </h3>
+        </div>
       </a>
 
       <a style={{color: 'white', fontFamily: 'sans-serif'}} href='/about/'>
