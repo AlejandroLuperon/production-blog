@@ -26,7 +26,7 @@ export default ({ data }) => {
   return (
 
       <div className={'d-flex flex-column align-items-center'}>
-        <div class='col-12' style={{
+        <div className='col-12' style={{
           maxWidth: '1200px'
         }}>
           <h1 style={{marginBottom: '65px'}}>
@@ -35,7 +35,7 @@ export default ({ data }) => {
           <div>{renderAst(post.htmlAst)}</div>
         </div>
       </div>
-    
+
   );
 };
 
