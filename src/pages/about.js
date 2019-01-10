@@ -1,5 +1,6 @@
 import React from "react";
 import me from "../images/me.jpg";
+import './about.css'
 
 import callback_1 from "../images/dealing-with-callback-hell-using-graphs-asset-1.png";
 
@@ -7,12 +8,12 @@ export default () => (
 
      <div className='col-12' style={{
        maxWidth: '1200px'}}>
-        <h1>Build Whatever You Want</h1>
+        <h1>About this blog</h1>
         <div className={'d-flex flex-lg-row flex-column '}>
-          <div className='col-md-4 col-12'>
-            <img style={{maxHeight: "600px"}} src={me} />
+          <div className='col-lg-4 col-12'>
+            <img style={{maxHeight: "600px"}} src={me} className='me'/>
           </div>
-          <div className='col-md-8 col-12'>
+          <div className='col-lg-8 col-12'>
             <p>
               This is a blog run by <a target='_blank' href="https://www.linkedin.com/in/alejandroluperon/">me</a>, Alejandro Luperon. The topics in this blog will range across a variety of topics in Software Engineering
               ranging from Front-End, to Back-End, database development, API development, machine learning, and more. I really enjoy engineering strategy, organization,

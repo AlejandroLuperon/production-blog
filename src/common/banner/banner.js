@@ -9,7 +9,7 @@ class Banner extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className='banner '>
         <div style={{border: '2px solid #e6e6e6', padding: '10px'}}>
           <strong>{this.props.title}</strong> - {this.props.children}
         </div>

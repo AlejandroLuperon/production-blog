@@ -5,3 +5,15 @@
 .icons {
   margin-top: 20px;
 }
+
+@media(min-width: 768px) {
+  .banner {
+    padding-left: 15px;
+  }
+}
+
+@media(max-width: 767px) {
+  .banner {
+    padding-bottom: 15px;
+  }
+}
