@@ -2,6 +2,7 @@ import React from 'react';
 import './menu.css';
 import Hamburger from '../icons/Hamburger.js'
 import Close from '../icons/Close.js'
+import Hammer from '../icons/Hammer.js'
 
 
 class Menu extends React.Component {
@@ -30,10 +31,10 @@ class Menu extends React.Component {
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" />
           <a href='/' className={'col'} style={{textDecoration: 'none', textAlign: 'center'}}>
-            <div className={'logo'} style={{
-              color: 'white'
-            }}>
-              Build Whatever You Want
+            <div className='d-flex flex-row justify-content-center align-items-center'>
+              <div className={'logo'} style={{marginRight: '15px', fontWeight: 'bold'}}>
+                Build Whatever You Want
+              </div>
             </div>
           </a>
           <Hamburger onClick={this.onClickOpenMenu.bind(this)} />
