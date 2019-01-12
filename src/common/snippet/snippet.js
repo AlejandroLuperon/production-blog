@@ -6,7 +6,7 @@ class Snippet extends React.Component {
   }
   render() {
     return (
-      <div style={{marginTop: '50px', marginBottom: '50px'}}>
+      <div id={this.props.id} className={this.props.className} style={{marginTop: '50px', marginBottom: '50px'}}>
         {this.props.children}
       </div>
     )

@@ -27,6 +27,8 @@ src: problem-460-lfu-cache-part-1.jpg
   Before I go into my implementation of each method in the LFUCache, take a look at my final result below.
 </paragraph>
 
+<snippet>
+
 ```java
 class LFUCache {
     HashMap<Integer, LinkedList<Node>> retrievalMap = new HashMap<Integer, LinkedList<Node>>();
@@ -98,8 +100,8 @@ class LFUCache {
     }
 }
 ```
-<br/>
-<br/>
+
+</snippet>
 
 <paragraph>
   A Node class is also used above. With my implementation of the LFUCache, I want to store the key and value properties in an object, so I will create a class that will store these properties. I also want to keep track of the number of times a
@@ -115,6 +117,8 @@ class LFUCache {
 
 </paragraph>
 
+<snippet>
+
 ```java
 class Node {
     public int key;
@@ -127,30 +131,38 @@ class Node {
     }
 }
 ```
-<br/>
-<br/>
+
+</snippet>
+
 <paragraph>
   The existence of an object in the LFUCache depends on how many times it is used. If there is a tie in terms of the frequency of objects used, and the capacity of LFUCache is reached, then the least recently used object from the tie of least frequently used objects will be removed from memory. To keep track of the frequency and relevance of an object, I will use a HashMap with the key being an Integer and the value being a LinkedList of Nodes. The key will represent the number of times all of the Nodes in the LinkedList have been seen, and the LinkedList will function as a Queue to keep track of the order in which the objects have been seen.
 </paragraph>
 
+<snippet>
+
 ```java
 HashMap<Integer, LinkedList<Node>> retrievalMap = new HashMap<Integer, LinkedList<Node>>();
 ```
-<br/>
-<br/>
+
+</snippet>
+
 <paragraph>
   To check if a key has already been added to the cache, I will also store the key in a HashMap for retrieval:
 </paragraph>
 
+<snippet>
+
 ```java
 HashMap<Integer, Node> nodeMap = new HashMap<Integer, Node>();
 ```
-<br/>
-<br/>
+
+</snippet>
 
 <paragraph>
 Now using the retrievalMap and nodeMap, we can now implement our get and put methods of the LFUCache. We'll start with the get method.
 </paragraph>
+
+<snippet>
 
 ```java
 public int get(int key) {
@@ -169,8 +181,8 @@ public int get(int key) {
     return -1;
 }
 ```
-<br/>
-<br/>
+
+</snippet>
 
 <paragraph>
   The get method will first check the nodeMap to see if the key already exists in the cache. If the key exists in the cache,
@@ -195,15 +207,20 @@ public int get(int key) {
   While this implementation keeps track of population in a separate property, we don't need to have a separate property for the population of the cache, as could instead check the size of the nodeMap.
 </paragraph>
 
+<snippet>
+
 ```java
   int capacity;
   int population = 0;
 ```
-<br/>
-<br/>
+
+</snippet>
+
 <paragraph>
   Using those properties, our put method looks like this:
 </paragraph>
+
+<snippet>
 
 ```java
 public void put(int key, int value) {
@@ -250,11 +267,14 @@ public void put(int key, int value) {
     }
 }
 ```
-<br/>
-<br/>
+
+</snippet>
+
 <paragraph>
   As required by the defined behavior of an LFUCache, if the cache has reached it's capacity, then the least frequently used object needs to be removed. The first two if statements in the put method check to see if capacity has been reached.
 </paragraph>
+
+<snippet>
 
 ```java
 if (capacity == 0) {
@@ -275,8 +295,9 @@ if (population == capacity && !itsNodeMap.containsKey(key)) {
     }
 }
 ```
-<br/>
-<br/>
+
+</snippet>
+
 <paragraph>
   The first if statement is for the case in which the cache has no capacity, so the put method should always exit. Otherwise, if the currently added key doesn't exist in the map and the capacity has been reached, the put method needs to remove the least frequently used object from the cache. To do so, starting from the smallest possible key of 0 in the retrievalMap, we will increment a counter to check to see if there exists a value in the retrievalMap for that specified key, and if that LinkedList is not empty, remove the node at the end of it. When a value is found, this search procedure ends and there is now room in the cache to add the new key.
 </paragraph>
@@ -284,6 +305,8 @@ if (population == capacity && !itsNodeMap.containsKey(key)) {
 <paragraph>
   Whether or not capacity has been reached, we will need a procedure to manage the addition of a key to the cache. If, for a given key, there is an object in memory, then we will need to increment the number of times it has been retrieved and rewrite the value of the Node. The node will then need to be moved to the next appropriate key in the retrievalMap.
 </paragraph>
+
+<snippet>
 
 ```java
   Node node;
@@ -311,8 +334,9 @@ if (population == capacity && !itsNodeMap.containsKey(key)) {
   }
 
 ```
-<br/>
-<br/>
+
+</snippet>
+
 <paragraph>
 If an object does not exist for that key, the we will need to create a new Node for that key, add that node to the nodeMap, and add the Node to retrievalMap in the LinkedList where the key, which represents the number of retrievals for the Nodes in the associated LinkedList, is 0.
 </paragraph>
@@ -320,6 +344,8 @@ If an object does not exist for that key, the we will need to create a new Node 
 <paragraph>
   Notice that the get and put methods both have some shared code: when a node is retrieved, it's moved to a different LinkedList in the retrievalMap HashMap. We'll put the shared code in a method and call the method in place of the duplicate code.
 </paragraph>
+
+<snippet>
 
 ```java
   private void moveNode(Node node) {
@@ -331,9 +357,14 @@ If an object does not exist for that key, the we will need to create a new Node 
       retrievalMap.get(node.retrievals).addFirst(node);
   }
 ```
-<br/>
-<br/>
-Finally, the implementation of our LFUCache class looks like this:
+
+</snippet>
+
+<paragraph>
+  Finally, the implementation of our LFUCache class looks like this:
+</paragraph>
+
+<snippet>
 
 ```java
 class LFUCache {
@@ -405,6 +436,8 @@ class LFUCache {
     }
 }
 ```
+
+</snippet>
 
 <paragraph>
   While I was happy that my solution solved the problem at all, I wanted to explore more optimal solutions. LeetCode provides visibility into how fast your solution performs with respect to other solutions and even provides access to code from other solutions. Part 2 of this article will cover a more performant implementation of an LFU cache.

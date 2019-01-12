@@ -13,7 +13,7 @@ export default ({ children, data }) => (
   <div>
     <Menu />
     <div className='d-flex flex-column align-items-center' style={{paddingLeft: '20px',paddingRight: '20px'}}>
-      <div className='d-flex flex-md-row flex-column-reverse col-12'
+      <div className='d-flex flex-md-row flex-column col-12'
        style={{
          maxWidth: '1200px',
          paddingTop: '100px',
