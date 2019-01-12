@@ -6,3 +6,9 @@
 -engineering methodology
 -web crawling
 -building foreign key relations and search using elasticsearch
+
+
+-publishing schedule
+-social media traction
+-blog comments
+-Article sharing

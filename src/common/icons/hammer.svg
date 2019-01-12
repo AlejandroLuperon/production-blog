@@ -1,5 +1,5 @@
 <svg className='hammer' viewBox="0 0 199 237" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Page-2" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <rect id="Rectangle" stroke="#979797" fill="#8B572A" fill-rule="nonzero" transform="translate(116.106406, 109.856061) rotate(-30.000000) translate(-116.106406, -109.856061) " x="101.606406" y="1.35606116" width="29" height="217"></rect>
         <ellipse id="Oval" stroke="#030303" fill="#0B0B0B" fill-rule="nonzero" transform="translate(38.320508, 90.641016) rotate(-30.000000) translate(-38.320508, -90.641016) " cx="38.3205081" cy="90.6410162" rx="20" ry="40"></ellipse>
         <rect id="Rectangle" fill="#030303" fill-rule="nonzero" stroke-linecap="square" stroke-linejoin="bevel" transform="translate(79.726896, 67.641016) rotate(-30.000000) translate(-79.726896, -67.641016) " x="33.726896" y="27.6410162" width="92" height="80"></rect>

@@ -27,9 +27,6 @@ class Menu extends React.Component {
     return (
       <div>
         <div className={'d-flex flex-row align-items-center navbar-bwyw'}>
-          <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" />
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" />
           <a href='/' className={'col'} style={{textDecoration: 'none', textAlign: 'center'}}>
             <div className='d-flex flex-row justify-content-center align-items-center'>
               <div className={'logo'} style={{marginRight: '15px', fontWeight: 'bold'}}>
