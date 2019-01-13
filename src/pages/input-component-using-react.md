@@ -6,10 +6,10 @@ description: "Encapsulate all of the possible behavior of your text field in a R
 src: input-component-using-react.jpg
 ---
 <paragraph>
-  As you may have seen with popular frameworks such as <a target="\_blank" href="https://getbootstrap.com/">Boostrap</a>,
-  <a target="\_blank" href="https://material.angular.io/">Angular Material</a>, or <a target="\_blank" href="https://www.polymer-project.org/">Polymer</a>, input or text fields can have a lot of configurations and states. Attributes such as the label, text field size, and color may vary across different places in your app. One way to manage the possible variations is to use <a href="https://reactjs.org/docs/components-and-props.html" target="\_blank
-  ">props</a> in <a target="\_blank" href="https://reactjs.org/">React</a>. Encapsulating all of the possible behaviors for your text fields inside a React <a href="https://reactjs.org/docs/components-and-props.html" target="\_blank
-  ">component</a> will provide options to configure the expected behavior of that text field in a predictable way without worrying about the implementation details of the text field itself.
+  As you may have seen with popular frameworks such as <BlogLink href="https://getbootstrap.com/">Boostrap</BlogLink>,
+  <BlogLink href="https://material.angular.io/">Angular Material</BlogLink>, or <BlogLink href="https://www.polymer-project.org/">Polymer</BlogLink>, input or text fields can have a lot of configurations and states. Attributes such as the label, text field size, and color may vary across different places in your app. One way to manage the possible variations is to use <BlogLink href="https://reactjs.org/docs/components-and-props.html"
+  ">props</BlogLink> in <BlogLink href="https://reactjs.org/">React</BlogLink>. Encapsulating all of the possible behaviors for your text fields inside a React <BlogLink href="https://reactjs.org/docs/components-and-props.html"
+  ">component</BlogLink> will provide options to configure the expected behavior of that text field in a predictable way without worrying about the implementation details of the text field itself.
 </paragraph>
 
 <paragraph>
@@ -28,7 +28,7 @@ src: input-component-using-react.jpg
 </paragraph>
 
 <paragraph>
-  Since these are going to be the attributes that we can change for our React component, we'll set the default props to define its initial state and also set the <a href="https://reactjs.org/docs/typechecking-with-proptypes.html" target="\_blank">prop types</a> to specify the data type required for each prop. "Validator" is another prop that I will add, which will be used to indicate the type of validation the value of the text field will undergo.
+  Since these are going to be the attributes that we can change for our React component, we'll set the default props to define its initial state and also set the <BlogLink href="https://reactjs.org/docs/typechecking-with-proptypes.html">prop types</BlogLink> to specify the data type required for each prop. "Validator" is another prop that I will add, which will be used to indicate the type of validation the value of the text field will undergo.
 </paragraph>
 
 <snippet>
@@ -124,7 +124,7 @@ handleChange(event) {
 
 </snippet>
 
-<paragraph>The code for the <a href='#demo'>live demonstration above</a>:</paragraph>
+<paragraph>The code for the <BlogLink href='#demo'>live demonstration above</BlogLink>:</paragraph>
 
 <snippet>
 
@@ -269,7 +269,7 @@ export default TextField;
   <br/>
   <ul>
     <li>I store my CSS classes and other constants inside JSON objects. I find this more readable and reliable.</li>
-    <li>I am using React version 15.6.2. In React 16.3, the way <a href="https://reactjs.org/docs/refs-and-the-dom.html" target="\_blank">refs are used</a> changes.</li>
+    <li>I am using React version 15.6.2. In React 16.3, the way <BlogLink href="https://reactjs.org/docs/refs-and-the-dom.html">refs are used</BlogLink> changes.</li>
   </ul>
 </paragraph>
 
