@@ -31,7 +31,7 @@ export default ({ data }) => {
   let loadDisqus = ()=>{
     console.log("loadDisqus");
     var d = document, s = d.createElement('script');
-    s.src = 'https://staging-buildwhateveryouwant.disqus.com/embed.js';
+    s.src = 'https://buildwhateveryouwant.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
   }
