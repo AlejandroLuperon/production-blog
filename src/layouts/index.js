@@ -16,7 +16,7 @@ export default ({ children, data }) => (
       <div className='d-flex flex-md-row flex-column col-12'
        style={{
          maxWidth: '1200px',
-         paddingTop: '100px',
+         paddingTop: '115px',
          paddingBottom: '35px',
          fontFamily: 'sans-serif'
        }}>
