@@ -23,7 +23,7 @@ export default ({ children, data }) => (
          <div className='col-md-8 col-12'>
            {children()}
          </div>
-         <div className='col-md-4 col-12'>
+         <div className='col-md-4 col-12 about'>
            <Banner title="Build Whatever You Want">
              Articles on various topics in Software Engineering and Computer Science. All articles are written by Alejandro Luperon.
            </Banner>

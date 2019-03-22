@@ -18,3 +18,9 @@ pre[class*="language-"] {
 *:not(pre[class*="language-"]) {
     font-family: sans-serif !important
 }
+
+@media (max-width: 767px) {
+  .about {
+    margin-top: 35px;
+  }
+}
